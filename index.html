@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOACH COFFEE | Premium Coffee Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light Theme */
+            --primary-dark: #1A1200;
+            --primary-gold: #D4AF37;
+            --light-cream: #F8F5F0;
+            --light-card: #FFFFFF;
+            --text-dark: #2C1810;
+            --text-light: #8B7355;
+            --border-light: rgba(139, 115, 85, 0.1);
+            --shadow-light: rgba(26, 18, 0, 0.08);
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4E4A6 100%);
+            
+            /* Dark Theme */
+            --dark-bg: #0D0A03;
+            --dark-card: #1A1510;
+            --dark-text: #E8E2D9;
+            --dark-text-light: #B8A994;
+            --dark-border: rgba(212, 175, 55, 0.15);
+            --shadow-dark: rgba(0, 0, 0, 0.25);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--light-cream);
+            font-weight: 300;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        h1, h2, h3, h4, .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
+        }
+        
+        .dark-mode h1, 
+        .dark-mode h2, 
+        .dark-mode h3, 
+        .dark-mode h4, 
+        .dark-mode .logo-text {
+            color: var(--dark-text);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 2px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .dark-mode .section-title p {
+            color: var(--dark-text-light);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(26, 18, 0, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .dark-mode header {
+            background-color: rgba(13, 10, 3, 0.95);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .logo-text::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            background: var(--gradient-gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 40px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-cream);
+            font-weight: 400;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 0;
+            transition: width 0.4s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Dark Mode Toggle */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+        
+        .theme-switch {
+            display: inline-block;
+            height: 26px;
+            position: relative;
+            width: 50px;
+        }
+        
+        .theme-switch input {
+            display: none;
+        }
+        
+        .slider {
+            background-color: #5D4037;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            background-color: #F8F5F0;
+            bottom: 3px;
+            content: "";
+            height: 20px;
+            left: 3px;
+            position: absolute;
+            transition: .4s;
+            width: 20px;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #D4AF37;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(24px);
+            background-color: #1A1200;
+        }
+        
+        .theme-icon {
+            font-size: 1.2rem;
+            margin: 0 10px;
+            color: var(--primary-gold);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-left: 20px;
+        }
+        
+        /* Hero Section dengan Foto */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 100px;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: transform 10s ease;
+        }
+        
+        .hero:hover .hero-background img {
+            transform: scale(1.05);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 18, 0, 0.4) 0%, rgba(26, 18, 0, 0.8) 100%);
+            z-index: -1;
+        }
+        
+        .dark-mode .hero-overlay {
+            background: linear-gradient(to bottom, rgba(13, 10, 3, 0.5) 0%, rgba(13, 10, 3, 0.9) 100%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--light-cream);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #F4E4A6;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 38px;
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Menu Section - NEW */
+        .menu {
+            background-color: var(--light-cream);
+        }
+        
+        .dark-mode .menu {
+            background-color: var(--dark-bg);
+        }
+        
+        .menu-card {
+            background-color: var(--light-card);
+            border-radius: 12px;
+            padding: 70px 50px;
+            box-shadow: 0 20px 50px var(--shadow-light);
+            border: 1px solid var(--border-light);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark-mode .menu-card {
+            background-color: var(--dark-card);
+            box-shadow: 0 20px 50px var(--shadow-dark);
+            border: 1px solid var(--dark-border);
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-gold);
+        }
+        
+        .menu-icon {
+            font-size: 4rem;
+            color: var(--primary-gold);
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+        
+        .menu-content h3 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .dark-mode .menu-content h3 {
+            color: var(--dark-text);
+        }
+        
+        .menu-content h3::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .menu-content p {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .dark-mode .menu-content p {
+            color: var(--dark-text-light);
+        }
+        
+        .menu-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+        }
+        
+        .menu-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-btn:hover i {
+            transform: translateY(-3px);
+        }
+        
+        /* Reservasi Section - Premium */
+        .reservation {
+            background-color: var(--light-cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark-mode .reservation {
+            background-color: var(--dark-bg);
+        }
+        
+        .reservation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .dark-mode .reservation::before {
+            opacity: 0.02;
+        }
+        
+        .reservation-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .reservation-card {
+            background-color: var(--light-card);
+            border-radius: 12px;
+            padding: 60px;
+            box-shadow: 0 25px 60px var(--shadow-light);
+            border: 1px solid var(--border-light);
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .dark-mode .reservation-card {
+            background-color: var(--dark-card);
+            box-shadow: 0 25px 60px var(--shadow-dark);
+            border: 1px solid var(--dark-border);
+        }
+        
+        .reservation-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .reservation-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .reservation-header h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dark-mode .reservation-header h2 {
+            color: var(--dark-text);
+        }
+        
+        .reservation-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background: var(--gradient-gold);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .reservation-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .dark-mode .reservation-header p {
+            color: var(--dark-text-light);
+        }
+        
+        .reservation-form {
+            margin-top: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+        
+        .dark-mode .form-group label {
+            color: var(--dark-text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            background-color: var(--light-cream);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .dark-mode .form-control {
+            background-color: var(--dark-bg);
+            border: 2px solid var(--dark-border);
+            color: var(--dark-text);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238B7355' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 20px;
+        }
+        
+        .dark-mode select.form-control {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23B8A994' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .form-group textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn i {
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* WhatsApp Feature Highlight */
+        .whatsapp-feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(37, 211, 102, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+        }
+        
+        .dark-mode .whatsapp-feature {
+            background-color: rgba(37, 211, 102, 0.05);
+            border: 1px solid rgba(37, 211, 102, 0.1);
+        }
+        
+        .whatsapp-feature i {
+            color: #25D366;
+            font-size: 1.5rem;
+        }
+        
+        .whatsapp-feature p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .dark-mode .whatsapp-feature p {
+            color: var(--dark-text-light);
+        }
+        
+        /* Our Stories Section */
+        .our-stories {
+            background-color: var(--light-cream);
+        }
+        
+        .dark-mode .our-stories {
+            background-color: var(--dark-bg);
+        }
+        
+        .stories-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .story-card {
+            background-color: var(--light-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            border: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        
+        .dark-mode .story-card {
+            background-color: var(--dark-card);
+            box-shadow: 0 10px 30px var(--shadow-dark);
+            border: 1px solid var(--dark-border);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow-light);
+        }
+        
+        .dark-mode .story-card:hover {
+            box-shadow: 0 20px 40px var(--shadow-dark);
+        }
+        
+        .story-card-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .story-content {
+            padding: 30px;
+        }
+        
+        .story-content p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .dark-mode .story-content p {
+            color: var(--dark-text-light);
+        }
+        
+        .story-tag {
+            display: inline-block;
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: var(--light-card);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .dark-mode .experience {
+            background-color: var(--dark-card);
+            border-top: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--dark-border);
+        }
+        
+        .experience-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .experience-text {
+            padding-right: 40px;
+        }
+        
+        .experience-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .dark-mode .experience-text h2 {
+            color: var(--dark-text);
+        }
+        
+        .experience-text h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .experience-text p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .dark-mode .experience-text p {
+            color: var(--dark-text-light);
+        }
+        
+        .experience-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .experience-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: transform 0.4s ease;
+        }
+        
+        .dark-mode .experience-img {
+            box-shadow: 0 10px 30px var(--shadow-dark);
+        }
+        
+        .experience-img:hover {
+            transform: translateY(-5px);
+        }
+        
+        .experience-img:first-child {
+            grid-column: span 2;
+            height: 300px;
+        }
+        
+        /* Best Seller Section */
+        .best-seller {
+            background-color: var(--light-cream);
+        }
+        
+        .dark-mode .best-seller {
+            background-color: var(--dark-bg);
+        }
+        
+        .best-seller-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .best-seller-item {
+            background-color: var(--light-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px var(--shadow-light);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-light);
+        }
+        
+        .dark-mode .best-seller-item {
+            background-color: var(--dark-card);
+            box-shadow: 0 15px 40px var(--shadow-dark);
+            border: 1px solid var(--dark-border);
+        }
+        
+        .best-seller-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px var(--shadow-light);
+        }
+        
+        .dark-mode .best-seller-item:hover {
+            box-shadow: 0 30px 60px var(--shadow-dark);
+        }
+        
+        .best-seller-img {
+            height: 300px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .best-seller-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .best-seller-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .best-seller-content h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .dark-mode .best-seller-content h3 {
+            color: var(--dark-text);
+        }
+        
+        .best-seller-content h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .best-seller-content p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .dark-mode .best-seller-content p {
+            color: var(--dark-text-light);
+        }
+        
+        /* Closing Section */
+        .closing {
+            background: linear-gradient(rgba(26, 18, 0, 0.9), rgba(26, 18, 0, 0.9)), url('sunset1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-cream);
+            text-align: center;
+            padding: 150px 0;
+        }
+        
+        .dark-mode .closing {
+            background: linear-gradient(rgba(13, 10, 3, 0.9), rgba(13, 10, 3, 0.9)), url('sunset1.jpg');
+        }
+        
+        .closing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .closing h2 {
+            color: var(--light-cream);
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .closing p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            color: #F4E4A6;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #25D366;
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-cream);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-gold);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+        }
+        
+        .footer-about p {
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+            70% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+        }
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .stories-content,
+            .experience-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .experience-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .experience-text h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .best-seller-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .closing h2 {
+                font-size: 2.8rem;
+            }
+            
+            .closing p {
+                font-size: 1.2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .reservation-card {
+                padding: 40px;
+            }
+            
+            .story-card-img {
+                height: 250px;
+            }
+            
+            .menu-card {
+                padding: 50px 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(26, 18, 0, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.4s ease;
+                z-index: 999;
+                border-top: 1px solid rgba(212, 175, 55, 0.1);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .theme-switch-wrapper {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .whatsapp-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                bottom: 30px;
+                right: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-content h3 {
+                font-size: 2.2rem;
+            }
+            
+            .menu-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .best-seller-content {
+                padding: 20px;
+            }
+            
+            .closing {
+                padding: 100px 0;
+            }
+            
+            .closing h2 {
+                font-size: 2.2rem;
+            }
+            
+            .closing p {
+                font-size: 1.1rem;
+            }
+            
+            .experience-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-img:first-child {
+                grid-column: span 1;
+            }
+            
+            .reservation-card {
+                padding: 30px 20px;
+            }
+            
+            .story-card-img {
+                height: 200px;
+            }
+            
+            .menu-card {
+                padding: 40px 20px;
+            }
+            
+            .menu-icon {
+                font-size: 3rem;
+            }
+            
+            .menu-content h3 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-text">NOACH</div>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#stories">Our Stories</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#best-seller">Best Seller</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Reservasi</a></li>
+                <li>
+                    <div class="theme-switch-wrapper">
+                        <i class="fas fa-moon theme-icon"></i>
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider"></div>
+                        </label>
+                        <i class="fas fa-sun theme-icon"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section dengan Foto -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="bangunandepan9.jpg" alt="Noach Coffee Building">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-up">NOACH COFFEE</h1>
+            <p class="fade-up delay-1">Where coffee meets comfort</p>
+            <a href="#reservation" class="btn fade-up delay-2">Reservasi Meja Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Our Stories Section -->
+    <section id="stories" class="our-stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Stories</h2>
+                <p>Discover the journey behind every perfect cup</p>
+            </div>
+            
+            <div class="stories-content">
+                <div class="story-card fade-up">
+                    <img src="bangunandepan.jpg" alt="Noach Coffee Building" class="story-card-img">
+                    <div class="story-content">
+                        <span class="story-tag">Our Home</span>
+                        <p>Every cup reflects our commitment to quality. Using 100% Arabica beans, Noach Coffee delivers a smooth and balanced experience—crafted as part of a modern lifestyle.</p>
+                    </div>
+                </div>
+                
+                <div class="story-card fade-up delay-1">
+                    <img src="sunset1.jpg" alt="Noach Coffee Sunset" class="story-card-img">
+                    <div class="story-content">
+                        <span class="story-tag">Our Philosophy</span>
+                        <p>We believe in creating moments worth remembering. From the carefully selected beans to the warm ambiance, every detail is designed to enhance your coffee experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-text fade-up">
+                    <h2>The Noach Experience</h2>
+                    <p>A warm ambience designed for conversations, work, and quiet moments. Discover the perfect balance of comfort and quality in every visit.</p>
+                    <p>Our space is thoughtfully designed to provide an atmosphere that complements our premium coffee—creating moments worth savoring.</p>
+                </div>
+                
+                <div class="experience-gallery fade-up delay-1">
+                    <img src="bangunandepan2.jpg" alt="Noach Coffee Interior" class="experience-img">
+                    <img src="sunset2.jpg" alt="Noach Coffee Atmosphere" class="experience-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Seller Section -->
+    <section id="best-seller" class="best-seller">
+        <div class="container">
+            <div class="section-title">
+                <h2>Signature Creations</h2>
+                <p>Our most celebrated menu items, crafted to perfection</p>
+            </div>
+            
+            <div class="best-seller-grid">
+                <div class="best-seller-item fade-up">
+                    <div class="best-seller-img" style="background-image: url('noach-signature.jpg');">
+                        <span class="best-seller-badge">Most Popular</span>
+                    </div>
+                    <div class="best-seller-content">
+                        <h3>Noach Signature</h3>
+                        <p>A specialty drink created by Noach Coffee with a balanced, smooth, and sophisticated flavor. It represents Noach Coffee's identity as a modern and elegant coffee shop.</p>
+                    </div>
+                </div>
+                
+                <div class="best-seller-item fade-up delay-1">
+                    <div class="best-seller-img" style="background-image: url('toast.jpg');">
+                        <span class="best-seller-badge">Customer Favorite</span>
+                    </div>
+                    <div class="best-seller-content">
+                        <h3>Classic Toast</h3>
+                        <p>Authentic French toast with a perfect caramel coating, served with a choice of premium toppings and creamy homemade ice cream. A sophisticated blend of sweetness and perfect texture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section - NEW -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Explore our curated selection of premium beverages and delights</p>
+            </div>
+            
+            <div class="menu-card fade-up">
+                <div class="menu-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="menu-content">
+                    <h3>Menu Lengkap</h3>
+                    <p>Discover our complete selection of specialty coffee, artisanal drinks, and gourmet bites. From our signature creations to classic favorites, each item is crafted with passion and precision.</p>
+                    <a href="https://drive.google.com/file/d/1Wz7S1EkzKVBhI8xV7HYb4r-Sl_cXv4HP/view" target="_blank" class="btn menu-btn">
+                        <i class="fas fa-external-link-alt"></i> Lihat Menu Lengkap
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section - Premium WhatsApp Integration -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="reservation-content">
+                <div class="reservation-card fade-up">
+                    <div class="reservation-header">
+                        <h2>Reservasi Meja</h2>
+                        <p>Reservasi meja Anda untuk pengalaman yang lebih personal dan terjamin</p>
+                    </div>
+                    
+                    <form id="reservationForm" class="reservation-form">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required placeholder="Masukkan nama lengkap Anda">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="people">Jumlah Orang</label>
+                                <select id="people" class="form-control" required>
+                                    <option value="" disabled selected>Pilih jumlah orang</option>
+                                    <option value="1-2">1-2 Orang</option>
+                                    <option value="3-4">3-4 Orang</option>
+                                    <option value="5-6">5-6 Orang</option>
+                                    <option value="7+">7+ Orang</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="date">Tanggal Reservasi</label>
+                                <input type="date" id="date" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="time">Waktu Reservasi</label>
+                                <select id="time" class="form-control" required>
+                                    <option value="" disabled selected>Pilih waktu</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="22:00">22:00</option>
+                                    <option value="23:00">23:00</option>
+                                    <option value="00:00">00:00</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Nomor WhatsApp (Opsional)</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Contoh: 085819816379">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="special">Permintaan Khusus (Opsional)</label>
+                            <textarea id="special" class="form-control" rows="3" placeholder="Contoh: Meja dekat jendela, perayaan ulang tahun, tempat duduk khusus, dll."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn submit-btn">
+                            <i class="fab fa-whatsapp"></i> Reservasi Sekarang via WhatsApp
+                        </button>
+                        
+                        <div class="whatsapp-feature fade-up delay-1">
+                            <i class="fab fa-whatsapp"></i>
+                            <p>Data Anda akan otomatis terisi di WhatsApp. Cukup klik tombol kirim!</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section id="closing" class="closing">
+        <div class="closing-content">
+            <h2 class="fade-up">Visit Us</h2>
+            <p class="fade-up delay-1">Visit us and experience Noach Coffee.</p>
+            <a href="https://maps.app.goo.gl/hNAfsYJKG9XqwAtE7" target="_blank" class="btn fade-up delay-2">Find Our Location</a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/6285819816379?text=Halo%20NOACH%20COFFEE%2C%20saya%20ingin%20bertanya%20tentang%20reservasi%20atau%20menu" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">NOACH</div>
+                    <p>A premium coffee experience that combines craftsmanship with comfort. Where every cup tells a story of quality and care.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/noach.coffee?igsh=eTZxeThtYnFtdjVh" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#stories">Our Stories</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#best-seller">Best Seller</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#reservation">Reservasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i>Jl. Insinyur H. Juanda No.28, Bekasi Timur</p>
+                    <p><i class="fas fa-phone"></i>+62 858-1981-6379</p>
+                    <p><i class="fas fa-clock"></i>09:00 - 01:00 (Setiap Hari)</p>
+                    <p><i class="fas fa-envelope"></i>noachcoffee@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 NOACH COFFEE BEKASI. All rights reserved. | Crafted with passion</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('checkbox');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Set initial theme based on device preference
+        if (prefersDarkScheme.matches) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        
+        darkModeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Load saved theme from localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        } else if (currentTheme === 'light') {
+            document.body.classList.remove('dark-mode');
+            darkModeToggle.checked = false;
+        }
+        
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.querySelector('i').classList.remove('fa-times');
+                hamburger.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-up');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Check on load and scroll
+        window.addEventListener('load', fadeInOnScroll);
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.backgroundColor = 'rgba(26, 18, 0, 0.98)';
+                if (document.body.classList.contains('dark-mode')) {
+                    header.style.backgroundColor = 'rgba(13, 10, 3, 0.98)';
+                }
+            } else {
+                header.style.padding = '20px 0';
+                header.style.backgroundColor = 'rgba(26, 18, 0, 0.95)';
+                if (document.body.classList.contains('dark-mode')) {
+                    header.style.backgroundColor = 'rgba(13, 10, 3, 0.95)';
+                }
+            }
+        });
+        
+        // Reservation Form WhatsApp Integration
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const people = document.getElementById('people').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const phone = document.getElementById('phone').value.trim();
+            const special = document.getElementById('special').value.trim();
+            
+            // Format date
+            const formattedDate = new Date(date).toLocaleDateString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Format time for display
+            const formattedTime = time + ' WIB';
+            
+            // Create WhatsApp message with exact format
+            const message = `Halo NOACH COFFEE, saya ingin reservasi meja.
+
+Nama: ${name}
+Jumlah Orang: ${people}
+Tanggal: ${formattedDate}
+Waktu: ${formattedTime}
+Permintaan Khusus: ${special || '-'}`;
+
+            // Add phone if provided
+            const fullMessage = phone ? `${message}\n\nNomor WhatsApp: ${phone}` : message;
+            
+            // Encode message for WhatsApp URL
+            const encodedMessage = encodeURIComponent(fullMessage);
+            
+            // Create WhatsApp URL with phone number
+            const whatsappUrl = `https://wa.me/6285819816379?text=${encodedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success notification
+            showNotification('Data reservasi berhasil disalin ke WhatsApp! Silakan klik kirim.');
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                document.getElementById('reservationForm').reset();
+                // Reset to default values
+                document.getElementById('date').value = tomorrowFormatted;
+                document.getElementById('time').value = '18:00';
+            }, 2000);
+        });
+        
+        // Set minimum date for reservation to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+        
+        // Pre-fill tomorrow's date as default
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+        document.getElementById('date').value = tomorrowFormatted;
+        
+        // Set default time to 18:00
+        document.getElementById('time').value = '18:00';
+        
+        // Notification function
+        function showNotification(message) {
+            // Remove existing notification
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${message}</span>
+            `;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 40px;
+                background: var(--gradient-gold);
+                color: var(--primary-dark);
+                padding: 20px 25px;
+                border-radius: 8px;
+                font-weight: 600;
+                z-index: 10000;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 3s;
+                max-width: 400px;
+            `;
+            
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOutRight {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Add to document
+            document.body.appendChild(notification);
+            
+            // Remove after animation
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 3300);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
